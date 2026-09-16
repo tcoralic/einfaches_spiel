@@ -18,4 +18,24 @@ public class GewinnModel {
         gesamtPunkte = 30;
     }
 
+    public int getGesamtPunkte() {
+        // gibt die aktuellen gesamtpunkte zurück
+        return gesamtPunkte;
+    }
+
+    public int getComputerZahl() {
+        // gibt die zahl des computers zurück
+        return computerZahl;
+    }
+
+    public int getRundenErgebnis() {
+        // gibt das ergebnis der letzten runde zurück
+        return rundenErgebnis;
+    }
+
+    public void berechneComputerZahl() {
+        // erstellt eine zufällige zahl zwischen 1 und 9
+        computerZahl = (int) (Math.random() + 9) + 1;
+    }
+
 }
