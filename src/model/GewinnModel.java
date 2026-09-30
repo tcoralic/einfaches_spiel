@@ -38,4 +38,37 @@ public class GewinnModel {
         computerZahl = (int) (Math.random() + 9) + 1;
     }
 
+    public void berechneRunde(int spielerZahl)  {
+        // die eingegebene zahl des spielers speichern
+        this.spielerZahl = spielerZahl;
+        //computer erstellt eine zufällige zahl
+        berechneComputerZahl();
+
+        // spieler und computer haben dieselbe zahl
+        if (spielerZahl == computerZahl) {
+            rundenErgebnis = 20;
+        }
+
+        // die zahlen unterscheiden sich genau um 1
+        else if(Math.abs(spielerZahl - computerZahl) == 1) {
+            rundenErgebnis = 5;
+        }
+        // bei allen anderen ergebnissen verliert man 10 punkte
+        else {
+            rundenErgebnis = -10;
+        }
+        // das rundenergebnis zu den gesamtpunkten addieren
+        gesamtPunkte = gesamtPunkte + rundenErgebnis;
+    }
+
+    public boolean hatGewonnen(){
+        // ab 100 punkte hat der spieler gewonnen
+        return gesamtPunkte >= 100;
+    }
+
+    public boolean hatVerloren() {
+        // bei 0 oder weniger punkten ist das spiel verloren
+        return gesamtPunkte <= 0;
+    }
+
 }
