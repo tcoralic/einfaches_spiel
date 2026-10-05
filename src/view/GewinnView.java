@@ -74,6 +74,14 @@ public class GewinnView extends JFrame {
         // button hinzufügen
         add(btnNochEinmal);
 
+        // weißer hintergrund für das rundenergebnis
+        lblRundenErgebnis.setOpaque(true);
+        lblRundenErgebnis.setBackground(Color.WHITE);
+
+        // weißer hintergrund für die gesamtpunkte
+        lblGesamtPunkte.setOpaque(true);
+        lblGesamtPunkte.setBackground(Color.WHITE);
+
         // fenster erscheint in der mitte des bildschirms
         setLocationRelativeTo(null);
 

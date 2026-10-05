@@ -35,7 +35,7 @@ public class GewinnModel {
 
     public void berechneComputerZahl() {
         // erstellt eine zufällige zahl zwischen 1 und 9
-        computerZahl = (int) (Math.random() + 9) + 1;
+        computerZahl = (int) (Math.random() * 9) + 1;
     }
 
     public void berechneRunde(int spielerZahl)  {
