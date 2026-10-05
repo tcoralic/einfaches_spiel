@@ -58,6 +58,9 @@ public class GewinnView extends JFrame {
         // button erstellen
         btnNochEinmal = new JButton("Noch Einmal!");
 
+        // button ist am anfang deaktiviert
+        btnNochEinmal.setEnabled(false);
+
         // elemente ins fenster einfügen
         add(lblRundenErgebnis);
         add(lblGesamtPunkte);
@@ -128,6 +131,25 @@ public class GewinnView extends JFrame {
         lblRundenErgebnis.setText("Tippe eine Zahl von 1 bis 9");
 
         // cursor wieder ins eingabefeld setzen
+        txtSpielerZahl.requestFocus();
+    }
+
+    public void sperreEingabe() {
+        // nach einer runde darf man nicht direkt noch einmal eingeben
+        txtSpielerZahl.setEnabled(false);
+
+        // jetzt darf man auf den button clicken
+        btnNochEinmal.setEnabled(true);
+    }
+
+    public void entsperreEingabe() {
+        // eingabefeld wieder freigegeben
+        txtSpielerZahl.setEnabled(true);
+
+        // button wieder deaktivieren
+        btnNochEinmal.setEnabled(false);
+
+        // cursor wieder ins eingabefeld zentrieren
         txtSpielerZahl.requestFocus();
     }
 

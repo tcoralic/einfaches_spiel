@@ -90,12 +90,17 @@ public class GewinnController {
             // falls z.B. buchstaben eingegeben wurden
             view.setRundenErgebnis("Bitte eine gültige Zahl eingeben!");
         }
+        // nach der runde eingabe sperren
+        view.sperreEingabe();
     }
 
     private void neueRunde() {
 
-        // Felder der letzten Runde leeren
+        // alte werte löschen
         view.leeresFeld();
+
+        // eingabe wieder freigeben
+        view.entsperreEingabe();
     }
 
     public static void main(String[] args) {
