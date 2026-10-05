@@ -55,18 +55,22 @@ public class GewinnController {
             // gesamtpunkte anzeigen
             view.setGesamtPunkte(model.getGesamtPunkte());
 
-            //prüfen, ob das ganze spiel gewonnen wurde
+
             if (model.hatGewonnen()) {
 
+                // spiel gewonnen
                 view.setRundenErgebnis("Gewonnen!");
 
+                // grün anzeigen
+                view.setzeFarbeGewonnen();
             }
 
-            // prüfen, ob das ganze spiel verloren wurde
             else if (model.hatVerloren()) {
-
+                // spiel verloren
                 view.setRundenErgebnis("Verloren!");
 
+                // rot anzeigen
+                view.setzeFarbeVerloren();
             }
 
             // normales rundenergebnis anzeigen
@@ -77,11 +81,18 @@ public class GewinnController {
                 // bei positiven punkten ein + anzeigen
                 if (ergebnis > 0) {
                     view.setRundenErgebnis("+" + ergebnis);
+
+                    // grün, weil punkte gewonnen wurden
+                    view.setzeFarbeGewonnen();
                 }
 
                 // bei -10 ist das minus schon vorhanden
                 else {
+                    // negative punkte anzeigen
                     view.setRundenErgebnis(String.valueOf(ergebnis));
+
+                    // rot, weil punkte verloren wurden
+                    view.setzeFarbeVerloren();
                 }
             }
 
@@ -101,6 +112,8 @@ public class GewinnController {
 
         // eingabe wieder freigeben
         view.entsperreEingabe();
+
+        view.setzeFarbeNormal();
     }
 
     public static void main(String[] args) {
