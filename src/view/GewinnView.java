@@ -131,4 +131,21 @@ public class GewinnView extends JFrame {
         txtSpielerZahl.requestFocus();
     }
 
+    public void setzeFarbeGewonnen() {
+        // beide oberen labels werden grün
+        lblRundenErgebnis.setBackground(Color.GREEN);
+        lblGesamtPunkte.setBackground(Color.GREEN);
+    }
+
+    public void setzeFarbeVerloren(){
+        // beide oberen labels werden rot
+        lblRundenErgebnis.setBackground(Color.RED);
+        lblGesamtPunkte.setBackground(Color.RED);
+    }
+
+    public void setzeFarbeNormal(){
+        // standardfarbe ist wieder weiß
+        lblRundenErgebnis.setBackground(Color.WHITE);
+        lblGesamtPunkte.setBackground(Color.WHITE);
+    }
 }
