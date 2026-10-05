@@ -81,6 +81,49 @@ public class GewinnView extends JFrame {
         setVisible(true);
     }
 
+    public String getSpielerZahl() {
+        // gibt zurück was der spieler ins textfeld geschrieben hat
+        return txtSpielerZahl.getText();
+    }
+
+    public JTextField getTxtSpielerZahl() {
+        // gibt das eingabefeld zurück
+        // das braucht später der controller für die enter taste
+        return txtSpielerZahl;
+    }
+
+    public JButton getBtnNochEinmal() {
+        // gibt den button zurück
+        // so kann der controller auf einen klick reagieren
+        return btnNochEinmal;
+    }
+
+    public void setComputerZahl(int zahl) {
+        // zeigt die zahl des computers im textfeld an
+        txtComputerZahl.setText(String.valueOf(zahl));
+    }
+
+    public void setGesamtPunkte(int punkte) {
+        // aktualisiert die anzeige der gesamtpunkte
+        lblGesamtPunkte.setText("Gesamtpunkte: " + punkte);
+    }
+
+    public void setRundenErgebnis(String text) {
+        // zeigt das ergebnis der runde an
+        lblRundenErgebnis.setText(text);
+    }
+
+    public void leeresFeld() {
+        // löscht die werte der letzten runde
+        txtSpielerZahl.setText("");
+        txtComputerZahl.setText("");
+        lblRundenErgebnis.setText("Tippe eine Zahl von 1 bis 9");
+
+        // cursor wieder ins eingabefeld setzen
+        txtSpielerZahl.requestFocus();
+    }
+
+
     public static void main(String[] args) {
 
         // erstellt und startet das fenster
