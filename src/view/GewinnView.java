@@ -123,10 +123,4 @@ public class GewinnView extends JFrame {
         txtSpielerZahl.requestFocus();
     }
 
-
-    public static void main(String[] args) {
-
-        // erstellt und startet das fenster
-        new GewinnView();
-    }
 }
